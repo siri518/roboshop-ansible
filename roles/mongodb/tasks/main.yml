@@ -10,13 +10,13 @@
 
 - name: Update MongoDb listen address
   ansible.builtin.replace:
-    path: /etc/mongodb.conf
+    path: /etc/mongod.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
 - name: start MongoDB service
   ansible.builtin.systemd_service:
-    name: nginx
+    name: mongodb
     state: restarted
     enabled: yes
 
