@@ -18,8 +18,4 @@
     dest: /app
     remote_src: yes
 
-- name: Copy package.json to /app
-  copy:
-    src: path/to/local/package.json
-    dest: /app/package.json
 
