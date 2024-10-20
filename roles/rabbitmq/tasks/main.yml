@@ -1,3 +1,6 @@
+- name: Set Prompt
+  ansible.builtin.shell: set-prompt {{ app_name }}-{{ env }}
+
 - name: Copy RabbitMQ Repo file
   ansible.builtin.copy:
     src: rabbitmq.repo
@@ -21,6 +24,6 @@
     vhost: /
     configure_priv: .*
     read_priv: .*
-    write_priv: ,*
+    write_priv: .*
     state: present
 
